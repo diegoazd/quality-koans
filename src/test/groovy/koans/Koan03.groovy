@@ -21,7 +21,7 @@ class Koan03 extends Specification {
   setup:
     //Inserta el codigo aqui para que la prueba funcione
     ArrayList<String> list 
-  expect:
+  expect: 'Un bloque expect se usa generalmente cuando se describe un stimulus y una respuesta en una sola expresion'
     list.join(' ') == 'Hello world'
   }
 
