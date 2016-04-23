@@ -33,7 +33,7 @@ class Koan03 extends Specification {
      En una prueba puede haber varios bloques when - then
   */
 
-  void "Deberia ejecutar multiples bloques when then"() {
+  void "Deberia ejecutar un bloques when then"() {
   when: 'Primer bloque when'
     Stack<Integer> stack = new Stack()
     //Incerta el codigo necesario para que la prueba pase
@@ -43,5 +43,30 @@ class Koan03 extends Specification {
     stack.pop() == 4
   }
 
+  void "Deberia manejar excepciones"() {
+  setup:
+    Stack stack = new Stack()
+  when:
+    stack.pop()
+  then: 'Espcecifica la excepcion correspondiente dentro de thrown ejemplo: thrown(MyException)'
+    thrown()
+  }
 
+  void "Otra forma de manejar excepciones"() {
+  setup:
+    Stack stack = new Stack()
+  when:'Tambien las excepciones pueden guardarse como variables'
+    stack.pop()
+  then:
+    //Indica el tipo de excepcion
+    ex = thrown()
+    ex.cause == null
+  }
+
+  void "No deberia arrojar excepciones"() {
+  when:
+    stack.pop()
+  then:
+    notThrown(EmptyStackException)
+  }
 }
