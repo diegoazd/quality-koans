@@ -69,4 +69,17 @@ class Koan03 extends Specification {
   then:
     notThrown(EmptyStackException)
   }
+
+
+  void "Deberia limpiar los datos de la prueba"() {
+  setup:
+    Stack stack = new Stack()
+  when:'El bloque cleanup se usa poco, generalmente es para limpiar estados compartidos de los objetos'
+    stack.push(1)
+  then:
+    stack.pop() == 1
+  cleanup:
+    //Inserta codigo aqui
+    assert stack == null
+  }
 }
