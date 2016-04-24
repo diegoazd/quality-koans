@@ -1,24 +1,14 @@
-Groovy Application project template
-------------------------------------
+## Quality koans ##
 
-You have just created a basic Groovy application. There is a standard project
-structure for source code and tests.
+Quality koans is a collections of small excercises in the form of unit tests.
 
-In this project you get:
+## Quality tests contains: ##
 
-* A Gradle build file
-* A standard project structure:
+* Spock koans 
 
-    <proj>
-      |
-      +- src
-          |
-          +- main
-          |     |
-          |     +- groovy
-          |
-          +- test
-          |   |
-          |   +- groovy
-
-          |
+## Getting Started ##
+1.  Make sure you have [JDK 1.6+][jdk] installed 
+2.  Download and unzip the [Koans][zip] (or clone the GitHub repository with `$ git clone https://github.com/diegoazd/quality-koans.git`)
+3.  Execute Koan01 with `$ ./gradlew koan01` and fail (or any other Koan using `$ ./gradlew koan##`)
+4.  Fix code, and execute again
+5.  Keep going until you are fluent at spock
